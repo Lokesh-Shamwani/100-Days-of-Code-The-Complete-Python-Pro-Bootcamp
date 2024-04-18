@@ -1,4 +1,4 @@
-# Password Generator Project
+ # Password Generator Project
 import random
 
 letters = [
