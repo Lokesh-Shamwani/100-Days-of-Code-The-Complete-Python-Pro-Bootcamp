@@ -2,10 +2,20 @@ from flask import Flask, render_template
 import random
 import datetime
 import requests
+from dotenv import load_dotenv
+import os
 
+
+def configure():
+    load_dotenv()
+
+
+configure()
+
+
+BLOG_API_URL = f"https://api.npoint.io/{os.getenv('API_KEY')}"
 GENDERIZE_API_URL = "https://api.genderize.io?"
 AGIFY_API_URL = "https://api.agify.io?"
-BLOG_API_URL = "https://api.npoint.io/c790b4d5cab58020d391"
 
 app = Flask(__name__)
 

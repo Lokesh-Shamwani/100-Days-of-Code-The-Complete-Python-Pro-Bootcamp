@@ -1,8 +1,16 @@
 from flask import Flask, render_template
 from post import Post
 import requests
+from dotenv import load_dotenv
+import os
 
-BLOG_API_URL = "https://api.npoint.io/c790b4d5cab58020d391"
+def configure():
+    load_dotenv()
+    
+configure()
+
+
+BLOG_API_URL = f"https://api.npoint.io/{os.getenv('API_KEY')}"
 
 app = Flask(__name__)
 
