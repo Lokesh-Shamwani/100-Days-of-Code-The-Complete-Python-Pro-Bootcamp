@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% block style %}
+            {{ bootstrap.load_css()}}
+        {% endblock style %}
+        <title>{% block title %}{% endblock title %}</title>
+    {% endblock head %}
+</head>
+<body>
+    {% block content %}
+    
+    {% from 'bootstrap/form.html' import render_form, render_field %}
+    
+    {% endblock content %}
+
+    {% block scripts %}
+        {{bootstrap.load_js()}}
+    {% endblock scripts %}
+</body>
+</html>
